@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="get_the_latest_news_nand_updates">Get The Latest News\nAnd Updates</string>
+    <string name="app_description">Your go-to for news. Breaking headlines, curated articles, personalized updates</string>
+    <string name="explore">Explore</string>
 </resources>
