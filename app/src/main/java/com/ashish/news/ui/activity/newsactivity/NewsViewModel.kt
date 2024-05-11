@@ -1,4 +1,4 @@
-package com.ashish.news.ui.viewmodel
+package com.ashish.news.ui.activity.newsactivity
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -31,9 +31,8 @@ class NewsViewModel : ViewModel() {
     private fun fetchNews() {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-
                 repo.fetchNews().collect {
-                    Log.d("rahul", "fetchNews: ${Gson().toJson(it)}")
+                    Log.d("rahul", "fetchNewsgfgfdgdfsgdfgf: ${Gson().toJson(it)}")
                     _uiState.value = UiState.Success(it.articles)
                 }
             } catch (e: IOException) {

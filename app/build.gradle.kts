@@ -51,10 +51,13 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.okhttp)
-    implementation (libs.gson)
+    implementation(libs.gson)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation (libs.androidx.activity.ktx)
-
-
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.glide)
+    implementation ("com.github.Spikeysanju:ZoomRecylerLayout:1.0")
 
 }
+
+
+

@@ -1,30 +1,51 @@
-package com.ashish.news.ui.activity
+package com.ashish.news.ui.activity.newsactivity
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ashish.news.Base.BaseActivity
 import com.ashish.news.Base.UiState
-import com.ashish.news.R
-import com.ashish.news.ui.viewmodel.NewsViewModel
+import com.ashish.news.databinding.ActivityNewsBinding
+import com.ashish.news.utils.StoppableLinearLayoutManager
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
+import www.sanju.zoomrecyclerlayout.ZoomRecyclerLayout
 
 class NewsActivity : BaseActivity() {
 
     private val viewModel: NewsViewModel by viewModels()
 
+    private lateinit var  binding : ActivityNewsBinding
+
+    private var  adapter = NewsAdapter(arrayListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityNewsBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_news)
-
+        setContentView(binding.root)
+        setUpAdapter()
         setUpObserver()
+
+    }
+
+    private fun setUpAdapter() {
+        val recylerView = binding.recylerView
+        recylerView.layoutManager = StoppableLinearLayoutManager(this, LinearLayout.VERTICAL, false)
+
+        val helper = androidx.recyclerview.widget.PagerSnapHelper()
+        helper.attachToRecyclerView(binding.recylerView)
+
+
+
+        recylerView.adapter= adapter
     }
 
     private fun setUpObserver() {
@@ -34,7 +55,8 @@ class NewsActivity : BaseActivity() {
                     when (it) {
                         is UiState.Success -> {
                             Log.d("rahul", "setUpObserver: ${Gson().toJson(it.data)}")
-
+                            adapter.addData(it.data)
+                            adapter.notifyDataSetChanged()
                         }
                         is UiState.Loading -> {
 

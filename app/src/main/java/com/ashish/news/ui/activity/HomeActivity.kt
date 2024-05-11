@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.ashish.news.Base.BaseActivity
 import com.ashish.news.databinding.ActivityHomeBinding
+import com.ashish.news.ui.activity.newsactivity.NewsActivity
 import com.ashish.news.utils.slideToRight
 
 class HomeActivity : BaseActivity() {
