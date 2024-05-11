@@ -4,6 +4,8 @@ import android.graphics.Color
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 import kotlin.random.Random
 
 fun View.slideToRight(screenWidth: Int) {
@@ -27,9 +29,9 @@ fun View.slideToRight(screenWidth: Int) {
 
 
  fun generateRandomColor(): Int {
-    val red = Random.nextInt(150, 256)
-    val green = Random.nextInt(150, 256)
-    val blue = Random.nextInt(150, 256)
+    val red = Random.nextInt(150, 200)
+    val green = Random.nextInt(150, 200)
+    val blue = Random.nextInt(150, 200)
     return Color.rgb(red, green, blue)
 }
 
@@ -39,4 +41,10 @@ fun adjustAlpha(color: Int, factor: Float): Int {
     val green = Color.green(color)
     val blue = Color.blue(color)
     return Color.argb(alpha, red, green, blue)
+}
+
+fun ImageView.loadImage(url:String) {
+    Glide.with(this.context)
+        .load(url)
+        .into(this)
 }

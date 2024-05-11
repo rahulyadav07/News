@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="8dp"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -38,19 +39,46 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHeight_percent="0.7"
+                app:layout_constraintHeight_percent="0.65"
                 android:background="@drawable/feed_card_background"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/itemHeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/work_sans_medium"
+                    tools:text="@string/get_the_latest_news_nand_updates"
+                    android:textAlignment="textStart"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/itemDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="14dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="18dp"
                     android:fontFamily="@font/work_sans"
-                    android:text="@string/get_the_latest_news_nand_updates"
-                    android:textAlignment="center"
+                    tools:text="@string/get_the_latest_news_nand_updates"
+                    android:textAlignment="textStart"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/itemAuther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/work_sans"
+                    tools:text="Author:Ashish Rai"
+                    android:textAlignment="textStart"
+                    android:layout_marginStart="20dp"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 

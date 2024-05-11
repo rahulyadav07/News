@@ -1,6 +1,5 @@
 package com.ashish.news.ui.activity.newsactivity
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
@@ -10,14 +9,12 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.ashish.news.Base.BaseActivity
 import com.ashish.news.Base.UiState
 import com.ashish.news.databinding.ActivityNewsBinding
 import com.ashish.news.utils.StoppableLinearLayoutManager
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
-import www.sanju.zoomrecyclerlayout.ZoomRecyclerLayout
 
 class NewsActivity : BaseActivity() {
 
